@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: DotGothic16, sans-serif;
+            background-image: url(/images/wallpaper.jpg);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #333;
+        }
+
+        .summary {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: large;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            padding: 1rem;
+            border-radius: 25px;
+            margin-top: rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #92f98e;;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        .content-section {
+            display: none;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Project List Styling */
+        .project-list {
+            list-style: none;
+        }
+
+        .project-card {
+            background-color: #1f1f1f;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+            color: #059800;
+        }
+        .project-card a {
+            font-size: large;
+            margin-bottom: 0.5rem;
+            color: #059800;
+        }
+        .project-card .tools {
+            margin-top: 0.5rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Icons Styling */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #92f98e;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="profile-container">
+            <img src="images/matrix.png" alt="Profile Picture" class="profile-pic">
+        </div>
+
+        <div class="summary">
+            <h1 style="color: #e1fbe0;">Rashed</h1>
+            <p>Hi, I'm a computer engineer who's super into software development and cybersecurity. I love building cool stuff with code and figuring out how to make systems more secure. Whether it's working on a new app or tackling cyber threats, I'm all about finding 
+                creative solutions to tricky problems, When I'm not at my keyboard, you'll probably find me on the gym or the boxing ring</p>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('education')">Education</a></li>
+                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('books')">Books</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="education" class="content-section">
+            <h2>Education</h2>
+            <p>Bachlor in Computer engineering</p>
+        </div>
+
+        <div id="projects" class="content-section">
+            <h2>Projects</h2>
+            <ul class="project-list">
+                <li class="project-card">
+                    <a href="https://github.com/RashedShboul/Clinent-Server">Client-Server</a>
+                    <p>Java client-server application is designed to provide a hands-on learning experience with sockets, streams, and buffers in Java programming. </p>
+                    <div class="tools">Tools used: Java</div>
+                </li>
+                <li class="project-card">
+                    <a href="https://github.com/RashedShboul/Data-structure-libraries">Data structure library</a>
+                    <p>Data structure from scratch</p>
+                    <div class="tools">Tools used: C++</div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="books" class="content-section">
+            <h2>Books I've Read</h2>
+            <ul class="project-list">
+                <li class="project-card">
+                    <h3>OPERATING SYSTEMS
+                        THREE EASY PIECES</h3>
+                </li>
+                <li class="project-card">
+                   <h3>computer networking a top-down approach</h3>
+                </li>
+            </ul>
+        </div>
+
+        <div id="contact" class="content-section">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:rrshboul717@gmail.com">Email</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/RashedShboul">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show projects section by default when page loads
+        window.onload = function() {
+            showSection('projects');
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
